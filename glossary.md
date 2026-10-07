@@ -1,17 +1,16 @@
-# Glossary (business)
+# Glossary
 
-Terms are in alphabetical order. Each entry links to the page that explains it.
+The index of every concept, one line each. The definitions live in `concepts/`.
 
-- **Attestation**: an independent accountant's report confirming the reserves on a given date. → [issuance](01-business/01-fiat-backed-stablecoin-issuance.md#6-reserves-what-makes-the-coin-worth-1)
-- **Autopen**: Anchorage's automated approver. It approves routine mints and burns within strict limits, so a human quorum doesn't have to sign each one. → [issuance §5.1](01-business/01-fiat-backed-stablecoin-issuance.md#51-mint-issue-fiat-in-tokens-out)
-- **Botón**: an independent watcher that compares every on-chain mint and burn with Anchorage's internal records and pages a human on any mismatch.
-- **Burn / redeem**: destroying tokens in exchange for fiat paid out of reserves.
-- **Coinductor**: automated conversion. A customer pre-approves a policy so that their deposits are minted or burned without approving each one.
-- **Hold**: a freeze on a customer balance while a conversion is being approved.
-- **Issuer**: the legal entity that creates and redeems the token and owns the redemption obligation.
-- **Mint / issue**: creating new tokens in exchange for fiat added to reserves.
-- **Primary market**: minting and redeeming directly with the issuer.
-- **Quorum**: the set of a customer's (or issuer's) authorized approvers, of whom a threshold must sign before an operation proceeds.
-- **Reserve ratio**: total reserves ÷ total tokens in circulation. It must stay ≥ 1.
-- **Reserves**: the cash and short-term government assets backing the tokens.
-- **Secondary market**: trading of existing tokens without the issuer. At Anchorage the term also covers bridging between chains.
+| Concept | One line |
+|---|---|
+| [Attestation](concepts/attestation.md) | An independent check that the reserves matched supply on a given date. |
+| [Burn (redeem)](concepts/burn.md) | Destroy tokens, pay out fiat. Tokens go first. |
+| [Fiat-backed stablecoin](concepts/fiat-backed-stablecoin.md) | A token redeemable 1:1 for fiat, backed by reserves. |
+| [Issuer](concepts/issuer.md) | The legal entity that mints, redeems and owns the $1 promise. |
+| [Mint (issue)](concepts/mint.md) | Fiat in, new tokens out. Fiat goes first. |
+| [Primary market](concepts/primary-market.md) | Minting and redeeming directly with the issuer. |
+| [Reserve ratio](concepts/reserve-ratio.md) | Reserves ÷ supply. Must stay ≥ 1. |
+| [Reserves](concepts/reserves.md) | The cash and short-dated government assets backing the tokens. |
+| [Secondary market](concepts/secondary-market.md) | Trading or moving existing tokens without the issuer. |
+| [Stablecoin](concepts/stablecoin.md) | A token designed to hold a steady price, usually $1. |

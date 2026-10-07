@@ -1,26 +1,28 @@
 # Anchorage Knowledge
 
-A layered knowledge base on Anchorage's stablecoin business. Each layer starts from the business and goes one level closer to the systems:
+A knowledge base on Anchorage's stablecoin business, built one small concept at a time. It starts with business basics and goes deeper toward operations and systems.
 
-| Layer | Folder | Question it answers |
-|---|---|---|
-| 1 | `01-business/` | What is the business, who are the parties, and how does value move? |
-| 2 | `02-operations/` *(not started)* | Who does what day to day: approvals, reserves, reconciliation, incidents. |
-| 3 | `03-systems/` *(not started)* | Which services implement it and how they talk to each other. |
-| 4 | `04-deep-dives/` *(not started)* | Workflows, security model, failure modes. |
+Start at the [glossary](glossary.md), which lists every concept.
 
-Start at [01-business/01-fiat-backed-stablecoin-issuance.md](01-business/01-fiat-backed-stablecoin-issuance.md).
+## How it is organized
 
-## Conventions
+- **One concept per file** in `concepts/`, named by its id (`mint.md`, `reserves.md`). A concept file is short: a one-line definition in bold, why it matters, how it works at Anchorage, open questions, and related concepts.
+- **Each file starts with frontmatter:**
+  ```yaml
+  id: mint                      # same as the file name
+  title: Mint (issue)
+  layer: business               # business | operations | systems
+  related: [burn, issuer]       # sideways links to other concept ids
+  implemented_by: [mintburn]    # optional: the system that does it (systems layer)
+  sources: [industry, atlas]
+  ```
+- **Links in the text** are relative Markdown links (`[burn](burn.md)`), so they work on GitHub.
+- **The glossary is an index, not content.** Add one line for each new concept.
 
-- **One topic per file.** The number prefix sets the reading order inside a layer.
-- **Every claim has a provenance tag:**
-  - `[atlas]`: from the Stablecoins Systems Atlas snapshot in `sources/`. This is what the code showed on 2026-09-02, and it is a draft that the team has not reviewed yet.
-  - `[industry]`: general stablecoin or regulatory knowledge, not specific to Anchorage.
-  - `[verify]`: plausible but not confirmed. Each one appears in that page's open questions.
-- **Business language first.** A system name (for example `mintburn`) appears only to point to the layer where it is explained.
-- The [glossary](glossary.md) uses business definitions. Engineering terms live in the atlas glossary until layer 3 exists.
+## Provenance tags
 
-## Sources
+Each claim says where it came from:
 
-See [sources/README.md](sources/README.md).
+- `[atlas]`: the [Stablecoins Systems Atlas](sources/README.md). It is a draft generated from the monorepo on 2026-09-02 and not yet reviewed by the team.
+- `[industry]`: general stablecoin or regulatory knowledge, not specific to Anchorage.
+- `[verify]`: not yet confirmed. It is also listed in that file's open questions.
